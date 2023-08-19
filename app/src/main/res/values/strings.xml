@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TechTask1</string>
+    <string name="rick">Rick and Morty</string>
+    <string name="status">status</string>
+    <string name="species">species</string>
+    <string name="name">name</string>
+    <string name="status_det">status</string>
+    <string name="species_det">species</string>
+    <string name="type">type</string>
+    <string name="gender">gender</string>
+    <string name="origin">origin</string>
+    <string name="location">location</string>
+    <string name="image">image</string>
+    <string name="episode">episode</string>
+    <string name="url">url</string>
+    <string name="created">created</string>
+</resources>
