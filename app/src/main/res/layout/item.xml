@@ -4,7 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+<<<<<<< HEAD
     android:background="@color/gray"
+=======
+>>>>>>> ef715f8 (Initial commit)
     android:orientation="horizontal">
 
 
@@ -14,12 +17,21 @@
         android:elevation="24dp">
 
         <ImageView
+<<<<<<< HEAD
             android:id="@+id/movies_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:src="@drawable/rick"
             android:scaleType="centerCrop" />
+=======
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/rick" />
+>>>>>>> ef715f8 (Initial commit)
 
     </androidx.cardview.widget.CardView>
 
@@ -31,7 +43,11 @@
         android:orientation="vertical">
 
         <TextView
+<<<<<<< HEAD
             android:id="@+id/movies_title"
+=======
+            android:id="@+id/title"
+>>>>>>> ef715f8 (Initial commit)
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rick"

@@ -7,11 +7,19 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
+<<<<<<< HEAD
             <value value="$USER_HOME$/.android/avd/Pixel_API_34.avd" />
+=======
+            <value value="$USER_HOME$/.android/avd/Pixel_4_API_30.avd" />
+>>>>>>> ef715f8 (Initial commit)
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
+<<<<<<< HEAD
     <timeTargetWasSelectedWithDropDown value="2023-08-18T09:53:54.982300Z" />
+=======
+    <timeTargetWasSelectedWithDropDown value="2023-08-21T10:45:04.043904Z" />
+>>>>>>> ef715f8 (Initial commit)
   </component>
 </project>

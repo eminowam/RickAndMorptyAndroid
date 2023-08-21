@@ -12,11 +12,18 @@ interface MainApi {
     @GET(Endpoints.CHARACTER)
     suspend fun getCharacter(
         @Query("page") page: Int,
+<<<<<<< HEAD
         @Query("results") results: String ,
     ):Response<MainResponse>
 
     @GET(Endpoints.DETAILS)
     suspend fun getDetails(
+=======
+    ):Response<MainResponse>
+
+    @GET(Endpoints.DETAILS)
+    suspend fun goToDetailsCharacter(
+>>>>>>> ef715f8 (Initial commit)
         @Path("movie_id") movie_id: Int,
         @Query("page") page: Int = 1
     ): Response<Details>
