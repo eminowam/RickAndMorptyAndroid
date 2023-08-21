@@ -7,11 +7,7 @@ interface CharacterRepository {
 
     suspend fun getCharacter(page: Int): MainResponse
 
-<<<<<<< HEAD
     suspend fun getCharacterSave(ids: List<Int>): List<Details>
-=======
     suspend fun goDetailsCharacter(characterId:Int): Details
-
->>>>>>> ef715f8 (Initial commit)
 
 }
