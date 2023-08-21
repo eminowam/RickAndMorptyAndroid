@@ -1,20 +1,5 @@
-package com.example.techtask1.presentation.fragments
-
-<<<<<<< HEAD
-=======
 import android.content.Context
 import android.content.Intent
->>>>>>> ef715f8 (Initial commit)
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-<<<<<<< HEAD
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.techtask1.R
-import com.example.techtask1.presentation.viewmodel.DetailsViewModel
-=======
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -29,16 +14,9 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_details.url_origin
 import kotlinx.android.synthetic.main.item.image
 import kotlinx.android.synthetic.main.item.status
->>>>>>> ef715f8 (Initial commit)
-
 class DetailsFragment : Fragment() {
 
     private val binding by lazy {
-<<<<<<< HEAD
-
-    }
-    private lateinit var viewModel: DetailsViewModel
-=======
         FragmentDetailsBinding.inflate(layoutInflater)
     }
 
@@ -50,23 +28,10 @@ class DetailsFragment : Fragment() {
     private val characterId: String by lazy {
         DetailsFragmentArgs.fromBundle(requireArguments()).id
     }
->>>>>>> ef715f8 (Initial commit)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-<<<<<<< HEAD
-    ): View? {
-        return inflater.inflate(R.layout.fragment_details, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(DetailsViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
-=======
     ): View = binding.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -101,5 +66,4 @@ class DetailsFragment : Fragment() {
                 bundleOf().apply { putExtra(CHARACTER_ID, characterId) }
             }
     }
->>>>>>> ef715f8 (Initial commit)
 }

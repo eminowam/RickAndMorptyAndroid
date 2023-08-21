@@ -10,10 +10,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-<<<<<<< HEAD
-=======
         maven { url = uri("https://www.jitpack.io" )}
->>>>>>> ef715f8 (Initial commit)
 
     }
 }

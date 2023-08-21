@@ -36,5 +36,4 @@
             android:id="@+id/action_favoritesFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>
->>>>>>> ef715f8 (Initial commit)
 </navigation>
