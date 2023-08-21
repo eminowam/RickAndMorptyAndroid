@@ -16,7 +16,6 @@ interface MainApi {
 
     @GET(Endpoints.DETAILS)
     suspend fun goToDetailsCharacter(
-        @Path("movie_id") movie_id: Int,
         @Query("page") page: Int = 1
     ): Response<Details>
 }

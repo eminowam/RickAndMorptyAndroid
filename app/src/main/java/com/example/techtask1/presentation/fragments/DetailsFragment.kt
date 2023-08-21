@@ -47,7 +47,6 @@ class DetailsFragment : Fragment() {
             observeUi(character)
         }
         viewModel.characterDetails(characterId = characterId.toInt())
-
     }
 
     private fun observeUi(character: Details) = with(binding) {
