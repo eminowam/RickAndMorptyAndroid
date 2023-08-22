@@ -12,10 +12,19 @@ interface MainApi {
     @GET(Endpoints.CHARACTER)
     suspend fun getCharacter(
         @Query("page") page: Int,
-    ):Response<MainResponse>
+    ): Response<MainResponse>
 
     @GET(Endpoints.DETAILS)
     suspend fun goToDetailsCharacter(
-        @Query("page") page: Int = 1
+        @Path("id") id: Int,
     ): Response<Details>
+
+    @GET(Endpoints.CHARACTER)
+    suspend fun storageCharacter(): Response<List<Details>>
+
+    @GET(Endpoints.DETAILS)
+    suspend fun saveCharacter(
+//        @Path("id") id: Int
+    ): Response<Details>
+
 }

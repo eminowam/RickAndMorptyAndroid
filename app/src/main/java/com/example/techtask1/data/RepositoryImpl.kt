@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class RepositoryImpl : CharacterRepository {
+
     private val api = RetrofitInstance.api
     override suspend fun getCharacter(page: Int): MainResponse =
         withContext(Dispatchers.IO) {

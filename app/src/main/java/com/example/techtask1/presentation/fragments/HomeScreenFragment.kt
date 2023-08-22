@@ -4,15 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.techtask1.databinding.FragmentHomeScreenBinding
+import com.example.techtask1.domain.models.Details
 import com.example.techtask1.presentation.adapter.CharacterAdapter
+import com.example.techtask1.presentation.adapter.CharacterSetOnClickListener
 import com.example.techtask1.presentation.viewmodel.HomeScreenViewModel
 
-class HomeScreenFragment : Fragment() {
+class HomeScreenFragment : Fragment(), CharacterSetOnClickListener {
 
     private val binding by lazy {
         FragmentHomeScreenBinding.inflate(layoutInflater)
@@ -23,7 +25,10 @@ class HomeScreenFragment : Fragment() {
     }
 
     private val characterAdapter by lazy {
-        CharacterAdapter(this)
+        CharacterAdapter(
+            itemType = CharacterAdapter.ITEM_CHARACTER,
+            listener = this
+        )
     }
 
     override fun onCreateView(
@@ -37,20 +42,28 @@ class HomeScreenFragment : Fragment() {
         observeRv()
     }
 
-    private fun observeViewModel() = with(viewModel){
-        character.observe(viewLifecycleOwner){
-            characterAdapter.character=it.results
+    private fun observeViewModel() = with(viewModel) {
+        character.observe(viewLifecycleOwner) {
+            characterAdapter.character = it.results
         }
     }
 
-    private fun observeRv()= with(binding){
-        binding.homeScreenRv.adapter=characterAdapter
+    private fun observeRv() = with(binding) {
+        binding.homeScreenRv.adapter = characterAdapter
     }
 
-    fun goToDetails(characterId:Int){
+
+    override fun goToCharacterDetails(characterId: Int) {
         findNavController().navigate(
             HomeScreenFragmentDirections.actionHomeScreenFragmentToDetailsFragment(characterId.toString())
         )
     }
+
+    override fun saveCharacter(character: Details) {
+        viewModel.saveCharacter(character = character)
+        Toast.makeText(requireContext(), "Saved", Toast.LENGTH_SHORT).show()
+    }
+
+
 }
 
