@@ -8,7 +8,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MainApi {
-
     @GET(Endpoints.CHARACTER)
     suspend fun getCharacter(
         @Query("page") page: Int,
@@ -17,14 +16,6 @@ interface MainApi {
     @GET(Endpoints.DETAILS)
     suspend fun goToDetailsCharacter(
         @Path("id") id: Int,
-    ): Response<Details>
-
-    @GET(Endpoints.CHARACTER)
-    suspend fun storageCharacter(): Response<List<Details>>
-
-    @GET(Endpoints.DETAILS)
-    suspend fun saveCharacter(
-//        @Path("id") id: Int
     ): Response<Details>
 
 }

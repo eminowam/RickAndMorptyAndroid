@@ -4,22 +4,18 @@ import android.app.Application
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.techtask1.domain.models.StorageModel
-import com.example.techtask1.presentation.fragments.FavoritesFragment
 
 private const val DB_NAME = "character_item.db"
-
 @Database(entities = [StorageModel::class], version = 1, exportSchema = false)
 
-abstract class DataBase : RoomDatabase() {
-
+abstract class CharacterDataBase : RoomDatabase() {
     abstract fun getCharacterDao(): Dao
 
     companion object {
-        private var INSTANCE: DataBase? = null
+        private var INSTANCE: CharacterDataBase? = null
         private val LOCK = Any()
 
-        fun getInstance(application: Application): DataBase {
+        fun getInstance(application: Application): CharacterDataBase {
             INSTANCE?.let {
                 return it
             }
@@ -29,7 +25,7 @@ abstract class DataBase : RoomDatabase() {
                 }
                 val db = Room.databaseBuilder(
                     application,
-                    DataBase::class.java,
+                    CharacterDataBase::class.java,
                     DB_NAME
                 ).build()
                 INSTANCE = db

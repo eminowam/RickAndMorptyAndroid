@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.techtask1.databinding.FragmentHomeScreenBinding
-import com.example.techtask1.domain.models.Details
+import com.example.techtask1.domain.models.Character
 import com.example.techtask1.presentation.adapter.CharacterAdapter
 import com.example.techtask1.presentation.adapter.CharacterSetOnClickListener
 import com.example.techtask1.presentation.viewmodel.HomeScreenViewModel
@@ -59,10 +59,10 @@ class HomeScreenFragment : Fragment(), CharacterSetOnClickListener {
         )
     }
 
-    override fun saveCharacter(character: Details) {
+    override fun saveCharacter(character: Character) {
         viewModel.saveCharacter(character = character)
-        Toast.makeText(requireContext(), "Saved", Toast.LENGTH_SHORT).show()
-    }
+        Toast.makeText(requireContext(), "Saved", Toast.LENGTH_SHORT).show()    }
+
 
 
 }

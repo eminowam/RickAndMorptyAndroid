@@ -7,7 +7,7 @@ interface CharacterRepository {
 
     suspend fun getCharacter(page: Int): MainResponse
 
-    suspend fun goDetailsCharacter(characterId:Int): Details
+    suspend fun goDetailsCharacter(characterId: Int): Details
 
 
 }

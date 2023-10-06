@@ -4,14 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bumptech.glide.Glide.init
 import com.example.techtask1.data.RepositoryImpl
 import com.example.techtask1.data.storage.StorageRepositoryImpl
-import com.example.techtask1.domain.models.Details
+import com.example.techtask1.domain.models.Character
 import com.example.techtask1.domain.models.MainResponse
-import com.example.techtask1.domain.repository.StorageRepository
 import com.example.techtask1.domain.usecase.GetCharacterUseCase
-import com.example.techtask1.domain.usecase.GetDetailsUseCase
 import com.example.techtask1.domain.usecase.SaveToStorageUseCase
 import kotlinx.coroutines.launch
 
@@ -32,9 +29,10 @@ class HomeScreenViewModel : ViewModel() {
         _character.value = getCharacterUseCase.invoke(page = page)
     }
 
-    fun saveCharacter(character: Details) = viewModelScope.launch {
-        saveCharacterUseCase.invoke(character)
+    fun saveCharacter(character: Character) = viewModelScope.launch {
+        storageRepository.getSaveCharacter(character = character)
     }
+
     init {
         getCharacter()
     }

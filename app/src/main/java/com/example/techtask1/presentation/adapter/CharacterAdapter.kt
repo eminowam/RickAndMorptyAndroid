@@ -5,15 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.techtask1.R
-import com.example.techtask1.domain.models.Details
-import com.example.techtask1.presentation.fragments.FavoritesFragment
-import com.example.techtask1.presentation.fragments.HomeScreenFragment
+import com.example.techtask1.domain.models.Character
 
 interface CharacterSetOnClickListener {
 
     fun goToCharacterDetails(characterId: Int)
 
-    fun saveCharacter(character: Details)
+    fun saveCharacter(character: Character)
 }
 
 class CharacterAdapter(
@@ -21,7 +19,7 @@ class CharacterAdapter(
     private val listener: CharacterSetOnClickListener
 ) : RecyclerView.Adapter<CharacterViewHolder>(){
 
-    var character = emptyList<Details>()
+    var character = emptyList<com.example.techtask1.domain.models.Character>()
         @SuppressLint("NotifyDataSetChanged")
         set(value) {
             field = value
@@ -54,7 +52,6 @@ class CharacterAdapter(
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         holder.bind(character[position])
-
         holder.itemView.setOnClickListener {
             listener.goToCharacterDetails(character[position].id)
         }

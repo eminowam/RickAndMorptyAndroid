@@ -1,26 +1,23 @@
 package com.example.techtask1.data.storage
 
-import com.example.techtask1.data.Retrofit.RetrofitInstance
-import com.example.techtask1.domain.models.Details
+import android.app.Application
+import com.example.techtask1.data.mapper.MapFromListStorageToCharacter
+import com.example.techtask1.data.mapper.MapFromStorageToCharacter
+import com.example.techtask1.domain.models.Character
 import com.example.techtask1.domain.repository.StorageRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
- class StorageRepositoryImpl : StorageRepository {
+class StorageRepositoryImpl : StorageRepository {
 
-    private val api = RetrofitInstance.api
+    private val dao = CharacterDataBase.getInstance(Application()).getCharacterDao()
 
+    private val mapFromDetailsToStorage = MapFromStorageToCharacter()
+    private val mapListFromDetailsToStorage = MapFromListStorageToCharacter()
+    override suspend fun getCharacterList(): List<Character> {
+        return dao.getCharacterList().map { list -> mapListFromDetailsToStorage.map(list) }
+    }
 
-    override suspend fun getCharacterList(): List<Details> =
-        withContext(Dispatchers.IO) {
-            api.storageCharacter().body()!!
-        }
+    override suspend fun getSaveCharacter(character: Character) {
+        dao.saveCharacter(mapFromDetailsToStorage.map(character))
 
-
-        override suspend fun getSaveCharacter(character: Details): Unit =
-            withContext(Dispatchers.IO) {
-                api.saveCharacter()
-            }
-
-
+    }
 }

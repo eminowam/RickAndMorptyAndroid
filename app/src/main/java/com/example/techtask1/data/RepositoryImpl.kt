@@ -15,7 +15,6 @@ class RepositoryImpl : CharacterRepository {
             api.getCharacter(page).body()!!
         }
 
-
     override suspend fun goDetailsCharacter(characterId: Int): Details =
         withContext(Dispatchers.IO) {
             api.goToDetailsCharacter(characterId).body()!!

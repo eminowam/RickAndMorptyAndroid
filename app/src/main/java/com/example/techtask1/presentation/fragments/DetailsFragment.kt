@@ -14,7 +14,6 @@ import com.example.techtask1.databinding.FragmentDetailsBinding
 import com.example.techtask1.domain.models.Details
 import com.example.techtask1.presentation.viewmodel.DetailsViewModel
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item.image
 
 class DetailsFragment : Fragment() {
 
